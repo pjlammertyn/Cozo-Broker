@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E18AF399-8E8A-41D6-81AF-7409471CD37E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>COZO</RootNamespace>
+    <AssemblyName>COZO</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IADTClient.cs" />
+    <Compile Include="ICampusTransaction.cs" />
+    <Compile Include="ICountry.cs" />
+    <Compile Include="ICurrentAdmissionListTransaction.cs" />
+    <Compile Include="IDepartmentTransaction.cs" />
+    <Compile Include="IDocumentTransaction.cs" />
+    <Compile Include="IGlobalData.cs" />
+    <Compile Include="IGZOClient.cs" />
+    <Compile Include="IGZOServer.cs" />
+    <Compile Include="IHealthcarePartyTransaction.cs" />
+    <Compile Include="IImageTransaction.cs" />
+    <Compile Include="ILaboTransaction.cs" />
+    <Compile Include="IOtherTransaction.cs" />
+    <Compile Include="IPatientConsentTransaction.cs" />
+    <Compile Include="IPatientTransaction.cs" />
+    <Compile Include="IResultsClient.cs" />
+    <Compile Include="IVisitTransaction.cs" />
+    <Compile Include="IWardTransaction.cs" />
+    <Compile Include="KmehrUtils.cs" />
+    <Compile Include="NoSocialSecurityNumberException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KMEHRBuilder\KMEHRBuilder.vbproj">
+      <Project>{733d0d8f-09fc-48e5-af39-82569724b200}</Project>
+      <Name>KMEHRBuilder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KMEHR\KMEHR.vbproj">
+      <Project>{28eeeea2-0e6a-4289-a22b-bc1d06834672}</Project>
+      <Name>KMEHR</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
