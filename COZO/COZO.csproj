@@ -66,6 +66,7 @@
     <Compile Include="IWardTransaction.cs" />
     <Compile Include="KmehrUtils.cs" />
     <Compile Include="NoSocialSecurityNumberException.cs" />
+    <Compile Include="PatientDeclareTransaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

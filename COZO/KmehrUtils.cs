@@ -10,8 +10,6 @@ namespace COZO
 
         public static string BuildMessage(folder[] folders)
         {
-            
-
             //Create new message
             var kmehrMsg = Builder.message(Builder.header(ServiceLocator.Current.GetInstance<IGlobalData>().HOSPITALhcparty, ServiceLocator.Current.GetInstance<IGlobalData>().GZOhcparty, null, null, null), null);
 
